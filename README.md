@@ -5,9 +5,9 @@ steganography that is based on modified LSB which helps to provide security to c
 an unsecured network.</p>
 
 # Project Team Members :
-# Awanit Ranjan (181CO161) 
-# Rutwik Mulay (181CO144)
-# Kshitij Raj (181CO129) 
+<b>Awanit Ranjan (181CO161) </b>
+<b>Rutwik Mulay (181CO144)</b>
+<b>Kshitij Raj (181CO129) </b>
 
 <br>
 
