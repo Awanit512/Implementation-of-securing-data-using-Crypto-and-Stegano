@@ -1,0 +1,395 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+<style type="text/css">
+  
+
+.bg-img {
+
+  background-image: url("static/cs.jpg");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+
+p.round3 {
+  border: 2px solid red;
+  border-radius: 12px;
+</style>
+<br><br>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><center><b>Cryptography and Steanography</b></center></h1>
+    <p class="lead"><center>A small Project to demonstrate  hiding technique using Cryptography and Steanography.</center></p>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<div class="jumbotron jumbotron-fluid bg-dark text-white" style="width:800px ;margin:auto;">
+  <div class="container">
+    <h1 class="display-4"><center><b>Want to Encrpyt text ?</b></center></h1>
+    <p class="lead">
+    	<center>Quickly Jump To  <br>
+    		<form action="{{url_for('encrypt')}}" method="GET"> 
+    			<button type="submit" class="btn btn-warning">Encrypter</button>
+    		</form>
+     	</center>
+    </p>
+  </div>
+</div>
+
+
+
+
+<br><br><br><br>
+
+<div class="bg-img" style="height:800px;">
+<h3><p style="color: yellow;padding: 200px">
+	Security of confidential data is the prime issue in today’s digital world. Steganography is one of the solutions to provide security, basically it is an art of hiding confidential data inside another image called cover image . Normal user cannot see to the confidential data directly, once it is hidden in cover image. Hidden data is invisible to unauthorized user and only authorize user can see confidential data by using proper process of steganography method. Beside steganography another security technique is also available called cryptography
+. Cryptography convert secrete data into unreadable form, generally it is called encryption and through decryption unreadable form convert into readable form. Normally only one security approach is used at a time by the users either cryptography or steganography. As we know that cryptographic technique is most useful and powerful security technique, so the combination of steganography and cryptography can be playing a very important role in this field. The equation (1) describing a very simple method of steganography:
+
+
+<center><h3><p class="round3" style="color:white;margin:auto;width: 900px">Cover Image + Secrete Data + Key = Stego Imag  .... (1)</p></h3></center>
+
+</p></h3>
+
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<br><br>
+
+
+
+<div id="mySidebar" class="sidebar" >
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="https://en.wikipedia.org/wiki/Steganography">Steanography</a>
+  <a href="https://en.wikipedia.org/wiki/Cryptography">Cryptography</a>
+  <a href="https://flask.palletsprojects.com/en/1.1.x/tutorial/">Flask</a>
+  <a href="{{url_for('team_info')}}">Team Information</a>
+</div>
+
+<div id="main">
+  <p><h1 style="text-align: center;color: orange"><i> For more Information on these Topics click sidebar below <i class="fas fa-arrow-right"></i> </i></h1></p>
+
+  <button style="margin-left:800px;margin-right: auto;" class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+ <!--  <h2>Collapsed Sidebar</h2> -->
+<!--   <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p> -->
+</p></div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+<br>
+
+<p> 
+<h1 style="margin:auto;text-align: center;color: blue;"><u>Diffreence between Steanography and Cryptography</u></h1>
+
+<br><br>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="row" style="margin: auto">
+  <div class="column">
+    <table>
+      <tr>
+        <th><h3>Steanography</h3></th>
+        
+      </tr>
+
+      <tr>
+        <td>1. Steganography means <b>covered writing</b>.</td>
+        
+       <tr>
+        <td>2. Steganography is less popular than Cryptography.</td>
+        
+      </tr>
+
+       <tr>
+        <td>3. Attack’s name in Steganography is  <b>Steganalysis.</b></td>
+        
+      </tr>
+
+
+      <tr>
+        <td>4. In steganography, structure of data is not usually altered.</td>
+        
+       <tr>
+        <td>5. Steganography supports  <b>Confidentiality</b> and <b>Authentication</b> security principles.</td>
+        
+      </tr>
+
+       <tr>
+        <td>6. In steganography, the fact that a secret communication is taking place is hidden.</td>
+        
+      </tr>
+      <tr>
+        <td>7. In steganography, not much mathematical transformations are involved.</td>
+      </tr>
+
+
+
+
+    </table>
+  </div>
+  <div class="column">
+    <table>
+      <tr>
+        <th><h3>Cryptography</h3></th>
+       
+      </tr>
+
+
+      <tr>
+        <td>Cryptography means <b>secret writing</b>.</td>
+      
+      </tr>
+
+
+      <tr>
+        <td>While cryptography is more popular than Steganography.</td>
+      
+      </tr>
+
+
+      <tr>
+        <td>While in cryptography, Attack’s name is <b>Cryptanalysis.</b></td>
+      
+      </tr>
+
+
+      <tr>
+        <td>
+      While in cryptography, structure of data is altered.
+    </td>
+  </tr>
+
+
+      <tr>
+        <td>While cryptography supports <b>Confidentiality</b> and <b>Authentication security</b> principles as well as <b>Data integrity</b> and <b>Non-repudiation</b>.</td>
+      
+      </tr>
+
+
+      <tr>
+        <td>While in cryptography only secret message is hidden.</td>
+      
+      </tr>
+
+
+      <tr>
+        <td>Cryptography involves the use of number theory, mathematics etc. to modify data</td>
+      
+      </tr>
+
+
+    
+    </table>
+  </div>
+</div>
+
+
+</p>
+<br><br>
+<br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

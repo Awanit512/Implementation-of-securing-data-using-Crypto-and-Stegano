@@ -1,0 +1,183 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+
+<br><br><br>
+
+
+
+<!-- style="background-color:#AFA8D8;"  setting for jumbotron background-->
+
+
+
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid" style="background-color:#336699;" >
+  <div class="container">
+    <h1 class="display-4">Steanography Decrypter</h1>
+    <p class="lead">Here we will see the secret data hidden (cipher text) in the stego image below and corresponding plain text .</p>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div> -->
+
+
+<br><br><br><br><!-- <br><br><br> -->
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid bg-dark text-white" style="width:800px ;margin-left:auto;margin-right:auto;padding: 10px;">
+  <div class="container" style="margin:auto;">
+    <h2 class="display-5">The decrypted <i class="fas fa-sms"></i>text ( Cypher text ) :- </h2>
+    <p class="lead">
+    	<b>
+			<ul>
+				<h5><li> First 64 bits : <span style="color:yellow"> {{cypher_text[:64]}} </span></li></h5>
+				{%for i in range(64,(cypher_text | length)-64, 64)%}
+					<h5><li> Next  64 bits : <span style="color:yellow">{{cypher_text[i:i+64]}}</span> </li></h5>
+				{%endfor%}
+				<h5><li> Last  64 bits : <span style="color:yellow">{{cypher_text[(cypher_text | length)-64:]}}</span> </li></h5>
+
+			</ul> 
+		</b>
+	</p>
+
+	<p class="lead">
+			<label for="ghf"> <h4>CYPHER TEXT : <h4></label>
+		<ul>
+		<center><li> <input name="ghf" type="text" value="{{ cypher_text }}" id="demos">
+
+		<!-- The button used to copy the text -->
+		<button id="demo" onclick="copyToClipboard(document.getElementById('demos').value)">Copy</button></center></li> 
+	
+  <script>
+    function copyToClipboard(text) {
+    	console.log("512 :          :::   "+text);
+      	window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+  	}
+	</script>
+</li>
+</ul>
+
+
+
+
+
+<br><br>
+ 	<p class="lead display-5">
+ 		 <h2 class="display-5">The Actual Plain Text :- </h2>
+			<center><h3 style="color:orange"><b><i>{{ plain_text }}</i></b></h3></center>
+		
+	</p>
+
+
+
+	
+			
+		<!-- 	<br><br>
+ 		<p class="lead display-5">
+ 		 <h2 class="display-5">Original Image :- </h2>
+			<center>
+				<img src="{{ url_for('display_image', filename=filename1) }}" alt="Image Not Applicable/Available" width="300" height="300">
+			</center>
+		
+		</p>
+
+
+ -->
+	
+			<br><br>
+ 		<p class="lead display-5">
+ 		 <h2 class="display-5">Stego Image :- </h2>
+			<center>
+				<img src="{{ url_for('display_image', filename=filename) }}" alt="Image Not Found Sorry Some error" width="300" height="300">
+			</center>
+
+      <br>
+      <form action="{{url_for('display_image' ,filename=filename )}}" >
+
+        <center><button type="submit" class="btn btn-primary">See Image</button></center>
+
+      </form>
+		
+		</p>
+    	
+  </div>
+</div>
+
+
+
+
+<!-- 6666666666666666666 -->
+
+<br><br><br><br>
+
+
+<div class="jumbotron jumbotron-fluid mb-3" style="background-color:#AFA8D8;width:800px;margin-left:auto;margin-right: auto;">
+	 <div class="container">
+
+
+   <form action="{{url_for('decrypt_post1')}}" method="POST"> 
+
+   	<h3 class="display-4" style="color: white"><b>Cypher text to plain text demo </b></h3><br>
+  	<center><label for="entercyphertext" class="form-label"><h4><b>ENTER CYPHER TEXT</b></h4></label></center>
+  	<center><input style="width: 80%" type="text" class="form-control" name="CYPHER_TEXT" placeholder="please enter a cyphertext" required></center>
+  	<br><br>
+  	<div>
+  		<center><button type="submit" class="btn btn-danger">Decrypt</button></center>
+  	</div>
+    <div><input name="KEYS" value="{{keys}}" type="hidden" ></div>
+	</form>
+	</div>
+
+<br><br>
+		<center>
+			<h4 style="color:black"><b>Want To Encrypt Something ??</b></h4>
+		</center>
+		<h5> </h5>  
+		<p class="lead">
+    	<center style="color:blue">Then Move to <br>
+    		<form action="{{url_for('encrypt')}}" method="GET"> 
+    			<button type="submit" class="btn btn-outline-primary">Encrypter</button>
+    		</form>
+     	</center>
+    </p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+{% endblock %}
+

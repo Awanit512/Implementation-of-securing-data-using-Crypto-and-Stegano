@@ -1,0 +1,119 @@
+{% extends "main.html" %}
+
+
+
+{% block content %}
+
+
+<br><br>
+<div class="jumbotron jumbotron-fluid bg-dark text-white">
+  <div class="container">
+    <h1 class="display-4"><center>Welcome To the Encrypter <i class="fas fa-home"></i>  !!!</center></h1>
+    <p class="lead">
+    	<center>
+    		<i class="fas fa-eye-slash"></i>  Feel free to encrypt any text you like trust us It will be confidential.
+    	</center>
+	</p>
+  </div>
+</div>
+
+<br><br><br><br>
+
+
+
+<div class="jumbotron jumbotron-fluid " style="width:800px ;margin:auto;">
+  <div class="container">
+    <h1 class="display-4"><center><b>ENCRYPTION</b></center></h1>
+    <p class="lead">
+    	<center>
+    			<!-- <form action="{{url_for('decrypt')}}" method="POST">
+					<label for="PLAIN_TEXT">Enter You Text</label>
+					<input type="text" name="PLAIN_TEXT" placeholder="Please Type Something..." ><br>
+
+
+	 				#Upload Image herre upload Button ..  do it later No worry 
+
+					<input type="submit" value="ENCRYPT">
+				</form>
+ -->
+
+
+
+
+
+
+<form class="was-validated" action="{{url_for('decrypt')}}" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="validationTextarea" class="form-label">Enter Your Text</label>
+    <textarea name="PLAIN_TEXT" class="form-control is-invalid" id="validationTextarea" placeholder="Please Type Something..." required autofocus></textarea>
+    <!-- <div class="invalid-feedback">
+      Please enter anything in textarea.
+    </div> -->
+  </div>
+<!-- 
+  <div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+    <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
+    <div class="invalid-feedback">Example invalid feedback text</div>
+  </div> -->
+
+  <!-- <div class="form-check">
+    <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+    <label class="form-check-label" for="validationFormCheck2">Toggle this radio</label>
+  </div>
+  <div class="form-check mb-3">
+    <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+    <label class="form-check-label" for="validationFormCheck3">Or toggle this other radio</label>
+    <div class="invalid-feedback">More example invalid feedback text</div>
+  </div> -->
+
+
+
+
+<!-- 
+  <div class="mb-3">
+    <select class="form-select" required aria-label="select example">
+      <option value="">Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <div class="invalid-feedback">Example invalid select feedback</div>
+  </div> -->
+
+<br><br>
+
+  <label for="image" class="form-label"><center>Upload Cover Image</center></label>
+  <div class="mb-3">
+    <input name="file" type="file"  autocomplete="off" class="form-control" required>
+<!--     <div class="invalid-feedback">Error File not uploaded</div> -->
+  </div>
+
+
+  <div class="mb-3">
+    <!-- <button class="btn btn-primary" type="submit" >Encrypt</button> -->
+    <button type="submit" class="btn btn-outline-success">Encrypt</button>
+  </div>
+</form>
+
+
+
+
+
+     	</center>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
