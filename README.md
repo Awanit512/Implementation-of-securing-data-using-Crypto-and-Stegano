@@ -1,5 +1,5 @@
 # Design and Implementation of securing data using Cryptography and Steganography
-<p>It is a A Python based application with use of flask a microservice based
+<p>It is  a Python based application with use of flask a microservice based
 framework to demonstrate the combination of cryptography that is based on symmetric key and
 steganography that is based on modified LSB which helps to provide security to confidential data over
 an unsecured network.</p>
