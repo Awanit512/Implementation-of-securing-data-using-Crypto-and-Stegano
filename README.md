@@ -42,28 +42,36 @@ Make Dirctory Crypto_Project : <br/>
 `mkdir Crypto_Project`
 
  <br/>
+ 
 Move Inside the Directory:   <br/>
 `cd Crypto_Project`
 
  <br/>
+ 
+ 
 Clone The Repo: <br/>
 `git clone https://github.com/Awanit512/Implementation-of-securing-data-using-Crypto-and-Stegano`
 
 
  <br/>
+ 
 Move Inside The Clone Repo: <br/>
 `cd Implementation-of-securing-data-using-Crypto-and-Stegano`
 
 
  <br/>
+ 
 Install all Requirements: <br/>
 `pip install -r requirements.txt` 
 
  <br/>
+ 
 Run the web application: <br/>
 `python3 app.py`
+
  <br/>
 After that Copy the link http://127.0.0.1:5000/ and paste it on your Broswe and you are good to go .
+
  <br/>
 
 # REFERENCES
